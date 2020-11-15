@@ -1,14 +1,14 @@
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
-import QuizIndex from "./screens/QuizIndex";
-import Quiz from "./screens/Quiz";
+import QuizIndex from "./Views/QuizIndex";
+import Quiz from "./Views/Quiz";
 
 const MainStack = createStackNavigator({
   QuizIndex: {
     screen: QuizIndex,
     navigationOptions: {
-      headerTitle: "Quizzes"
-    }
+      headerTitle: "Quizzes App",
+    },
   },
   Quiz: {
     screen: Quiz,
@@ -17,10 +17,10 @@ const MainStack = createStackNavigator({
       headerTintColor: "#fff",
       headerStyle: {
         backgroundColor: navigation.getParam("color"),
-        borderBottomColor: navigation.getParam("color")
-      }
-    })
-  }
+        borderBottomColor: navigation.getParam("color"),
+      },
+    }),
+  },
 });
 
 export default createAppContainer(MainStack);
